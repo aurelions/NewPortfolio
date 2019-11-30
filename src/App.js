@@ -5,11 +5,11 @@ import Navigation from './components/Home';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
+    <>
+      <nav className="App-header">
         <Navigation/>
-      </header>
-    </div>
+      </nav>
+    </>
   );
 }
 

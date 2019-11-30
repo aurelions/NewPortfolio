@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components':
+import styled from 'styled-components';
 
 
 
@@ -7,38 +7,47 @@ import styled from 'styled-components':
 function Navigation(){
 
 const NavigationDiv = styled.div`
+    display: flex;
     width: 100%;
-    height: 35px;
     color: green;
 `
 const LogoDiv = styled.div`
-    
+    width: 25%;
 `
 const Logo = styled.img`
+    width: 20%;
+`
+const MenuDiv = styled.nav`
+    display: flex;
+    justify-content: space-around;
+    justify-content: flex-end;
+    width: 75%;
 
 `
-const MenuDiv = styled.div`
+const Home = styled.a`
 
 `
-const Home = styled.p`
+const Projects = styled.a`
 
 `
-const Projects = styled.p`
+const About = styled.a`
 
 `
-const About = styled.p`
+const navTH = {
+    text: 'Home',
+    //put href here***
 
-`
+}
 return(
 
         <NavigationDiv>
             <LogoDiv>
-                <Logo></Logo>
+            <Logo src='./assets/lynx-cat.jpg'/>
             </LogoDiv>
             <MenuDiv>
-                <Home/>
-                <Projects/>
-                <About/>
+                <Home text={navTH}/>
+                <Projects>Projects</Projects>
+                <About>About</About>
             </MenuDiv>
         </NavigationDiv>
 
