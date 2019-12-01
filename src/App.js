@@ -14,6 +14,7 @@ function App() {
     <>
       <header className="App-header">
        <Navigation/>
+        <div id="Light"></div>
 
       </header>
 
