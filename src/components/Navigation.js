@@ -9,7 +9,7 @@ function Navigation(){
 const NavigationDiv = styled.div`
     display: flex;
     width: 100%;
-    color: green;
+    justify-content: space-around;
 `
 const LogoDiv = styled.div`
     width: 25%;
@@ -19,35 +19,39 @@ const Logo = styled.img`
 `
 const MenuDiv = styled.nav`
     display: flex;
-    justify-content: space-around;
     justify-content: flex-end;
-    width: 75%;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: row;
+    width: 45%;
 
 `
 const Home = styled.a`
-
+    
+   
 `
 const Projects = styled.a`
 
 `
 const About = styled.a`
 
-`
-const navTH = {
-    text: 'Home',
-    //put href here***
-
-}
+`   
 return(
 
         <NavigationDiv>
             <LogoDiv>
-            <Logo src='./assets/lynx-cat.jpg'/>
+                <Logo src='./assets/lynx-cat.jpg'/>
             </LogoDiv>
             <MenuDiv>
-                <Home text={navTH}/>
-                <Projects>Projects</Projects>
-                <About>About</About>
+                <div>
+                    <Home>Home</Home>
+                </div>
+                <div>
+                    <Projects>Projects</Projects>
+                </div>
+                <div>
+                    <About>About</About>
+                </div>
             </MenuDiv>
         </NavigationDiv>
 
