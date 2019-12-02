@@ -1,24 +1,22 @@
-import React, {useRef, useEffect} from 'react';
-//import logo from ./logo.svg******add later******
+import React,{} from 'react';
 import './App.css';
 import Navigation from './components/Navigation';
-import {TweenMax, Power3} from 'gsap';
+import Particles from "./components/Particles";
 
 function App() {
-  let item = useRef('hello');
-  console.log(item);
+  // let item = useRef('hello');
+  // console.log(item);
 
 
 
   return (
-    <>
+    <div>
       <header className="App-header">
-       <Navigation/>
-        <div id="Light"></div>
-
+        <Navigation />
       </header>
-
-    </>
+      <div id="Light"></div>
+      <Particles />
+    </div>
   );
 }
 
