@@ -10,7 +10,7 @@
     "react-dom": "^16.12.0",
     "react-gsap": "^1.2.0",
     "react-particles-js": "^2.7.0",
-    "react-scripts": "3.2.0",
+    "react-scripts": "^4.0.2",
     "reactstrap": "^8.1.1",
     "styled-components": "^4.4.1"
   },
@@ -34,5 +34,19 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "main": "server.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Conary36/NewPortfolio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Conary36/NewPortfolio/issues"
+  },
+  "homepage": "https://github.com/Conary36/NewPortfolio#readme"
 }
