@@ -1,7 +1,6 @@
 import React,{} from 'react';
-import './App.css';
-import Navigation from './components/Navigation';
-import Particles from "./components/Particles";
+import  './App.css';
+import Navigation from './Navigation';
 
 function App() {
   // let item = useRef('hello');
@@ -15,7 +14,9 @@ function App() {
         <Navigation />
       </header>
       <div id="Light"></div>
-      <Particles />
+      <body className="bodyImg">
+      
+      </body> 
     </div>
   );
 }
