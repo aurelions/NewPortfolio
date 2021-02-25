@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import {Form} from 'react-bootstrap';
 
 class Contact extends React.Component{
     constructor(props){
@@ -30,32 +31,32 @@ class Contact extends React.Component{
         })
     }
     resetForm(e){
-        this.setState({name: '', email: '', message: ''})
+        this.setState({name: '', email: '', phone: '', message: ''})
     }
 
     render(){
 
         return(
-            <div className="Contact">
-                <form id="contact-form" onSubmit={this.handleSubmit.bind(this)} method="POST">
-                    <div className="form-group">
-                        <label htmlFor='name'>Name</label>
-                        <input type="text" className="form-control" value={this.state.name} onChange={this.onNameChange.bind(this)}/>
-                    </div>
-                     <div className="form-group">
-                        <label htmlFor='email-input'>Email</label>
-                        <input type="email" className="form-control" aria-describedby="email" value={this.state.email} onChange={this.onEmailChange.bind(this)}/>
-                    </div>
-                     <div className="form-group">
+            <div>
+                <Form  onSubmit={this.handleSubmit.bind(this)} method="POST">
+                    <Form.Group controlId="formName">
+                        <Form.Label htmlFor='name'>Name</Form.Label>
+                        <Form.Control type="text" placeholder="name" value={this.state.name} onChange={this.onNameChange.bind(this)}/>
+                    </Form.Group>
+                     <Form.Group controlId="formEmail">
+                        <Form.Label htmlFor='email-input'>Email</Form.Label>
+                        <Form.Control type="email" placeholder="email" aria-describedby="email" value={this.state.email} onChange={this.onEmailChange.bind(this)}/>
+                    </Form.Group>
+                     <Form.Group controlId="formPhone">
                         <label htmlFor='phone-input'>Phone</label>
-                        <input type="phone" className="form-control" aria-describedby="phone" value={this.state.phone} onChange={this.onPhoneChange.bind(this)}/>
-                    </div>
-                     <div className="form-group">
-                        <label htmlFor='Message'>Message</label>
-                        <textarea className="form-control" rows="5" value={this.state.message} onChange={this.onMessageChange.bind(this)}></textarea>
-                    </div>
+                        <input type="phone" placeholder="phone" aria-describedby="phone" value={this.state.phone} onChange={this.onPhoneChange.bind(this)}/>
+                    </Form.Group>
+                     <Form.Group controlId="formMessage">
+                        <Form.Label htmlFor='Message'>Message</Form.Label>
+                        <Form.Control as="textarea"  rows="5" value={this.state.message} onChange={this.onMessageChange.bind(this)}/>
+                    </Form.Group>
                     <button type="submit" className="btn btn-primary">Submit</button>
-                </form>
+                </Form>
         
             </div>
         )
