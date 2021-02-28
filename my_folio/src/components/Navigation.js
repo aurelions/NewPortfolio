@@ -1,6 +1,8 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom';
-import {Navbar,Nav,Container} from 'react-bootstrap'
+import {Navbar,Nav} from 'react-bootstrap'
+
+
 
 
 
@@ -8,10 +10,10 @@ export default function Navigation(){
 
 
 return(
+    <div className="navbox"  >
     
-    <Navbar expand="lg" bg="dark" variant="dark">
-        <Container>
-            <Nav className="justify-content-center">
+    <Navbar fluid className="sidebar" inverse>
+            <Nav id="nav" className="justify-content-center">
                 <NavLink to="/" exact>
                     Conary
                 </NavLink>
@@ -21,10 +23,10 @@ return(
                 <NavLink to="contact">
                     Contact
                 </NavLink>
-            
             </Nav>
-        </Container>
+       
     </Navbar>
+    </div>
     
 )
 

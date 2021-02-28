@@ -1,4 +1,5 @@
 import React,{} from 'react';
+import './components/styles.css'
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import Contact from './components/Contact';
 import About from './components/About';
@@ -11,7 +12,9 @@ function App() {
  
 
   return (
+   <div className="App">
    <BrowserRouter>
+    <div className="app-container">
     <Navigation/>
       <Switch>
         <Route component={Home} path='/' exact={true}/>
@@ -19,8 +22,9 @@ function App() {
         <Route component={Contact} path='/contact'/>
         <Route component={Projects} path='/projects'/>
       </Switch>
+    </div>
    </BrowserRouter>
-   
+   </div>
   );
 }
 
