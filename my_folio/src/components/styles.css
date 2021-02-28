@@ -1,0 +1,33 @@
+.App{
+    
+    text-align: center;
+}
+
+
+.app-container{
+    display: flex;
+
+}
+/**************************NAVIGATION*******************************************/
+.sidebar{
+  height: 100em;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #54FFCE;
+  overflow-x: hidden;
+  /* padding-top: 16px; */
+}
+
+#nav{
+    display: flex;
+    flex-direction: column;
+}
+
+.navbox{
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+}

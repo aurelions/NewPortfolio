@@ -48,8 +48,8 @@ class Contact extends React.Component{
                         <Form.Control type="email" placeholder="email" aria-describedby="email" value={this.state.email} onChange={this.onEmailChange.bind(this)}/>
                     </Form.Group>
                      <Form.Group controlId="formPhone">
-                        <label htmlFor='phone-input'>Phone</label>
-                        <input type="phone" placeholder="phone" aria-describedby="phone" value={this.state.phone} onChange={this.onPhoneChange.bind(this)}/>
+                        <Form.Label htmlFor='phone-input'>Phone</Form.Label>
+                        <Form.Control type="phone" placeholder="phone" aria-describedby="phone" value={this.state.phone} onChange={this.onPhoneChange.bind(this)}/>
                     </Form.Group>
                      <Form.Group controlId="formMessage">
                         <Form.Label htmlFor='Message'>Message</Form.Label>
