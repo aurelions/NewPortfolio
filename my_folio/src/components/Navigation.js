@@ -1,6 +1,7 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom';
-import {Navbar,Nav} from 'react-bootstrap'
+import {Navbar,Nav} from 'react-bootstrap';
+import {SocialIcon} from 'react-social-icons';
 
 
 
@@ -24,8 +25,12 @@ return(
                     Contact
                 </NavLink>
             </Nav>
-       
+       <div className="icons">
+                <SocialIcon url="https://twitter.com/kenzo_dev" target="_blank"/>
+                <SocialIcon/>     
+       </div>
     </Navbar>
+     
     </div>
     
 )
