@@ -1,7 +1,8 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom';
 import {Navbar,Nav} from 'react-bootstrap';
-import {SocialIcon} from 'react-social-icons';
+// import {SocialIcon} from 'react-social-icons';
+import * as FaIcons from "react-icons/fa";
 
 
 
@@ -11,27 +12,28 @@ export default function Navigation(){
 
 
 return(
-    <div className="navbox"  >
+   
     
-    <Navbar fluid className="sidebar" inverse>
-            <Nav id="nav" className="justify-content-center">
-                <NavLink to="/" exact>
-                    Conary
-                </NavLink>
-                <NavLink to="about">
-                    About
-                </NavLink>
-                <NavLink to="contact">
+    <Navbar fluid className="sidebar-left" inverse>
+            <Nav id="nav" className="vertical-text-left">
+                <NavLink className="navi" to="contact">
                     Contact
                 </NavLink>
+                <NavLink className="navi" to="about">
+                    About
+                </NavLink>
+                    <FaIcons.FaHome/>
+                <NavLink className="navi" to="/" exact>
+                    Home
+                </NavLink>
+                
             </Nav>
        <div className="icons">
-                <SocialIcon url="https://twitter.com/kenzo_dev" target="_blank"/>
-                <SocialIcon/>     
+                <FaIcons.FaTwitter url="https://twitter.com/kenzo_dev" target="_blank"/>          
        </div>
     </Navbar>
      
-    </div>
+  
     
 )
 
