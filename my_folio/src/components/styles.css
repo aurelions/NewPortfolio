@@ -1,24 +1,25 @@
 .App{
-    
     text-align: center;
 }
 
 
 .app-container{
-    display: flex;
-    justify-content: center;
+    /* display: flex;
+    justify-content: center; */
 
 }
 /**************************NAVIGATION*******************************************/
 .sidebar-left{
+    position: fixed;
     float: left;
-    width: 10%;  
+    top: 0;
+    left: 0;
+    width: 175px;  
     height: 100vh;
     color: white;
-    position: fixed;
-    background-color: #1a1a1d;
+    background-color: #5e5e70;
     overflow-x: auto;
-    z-index: 998;
+    z-index: 995;
  
 }
 .vertical-text-left{
@@ -54,6 +55,7 @@
     font-weight: 100;
     font-size: 5rem;
     margin-top: -60px;
+    margin-left: 175px;
     padding-left: 10px;
     text-shadow: 0 0 24px rgba(189,21,189,.8);
 }
@@ -64,9 +66,25 @@
     -webkit-text-fill-color: transparent;
 }
 
+/*****************************Projects**************************************/
+.project-container{
+    overflow: hidden;
+    position: relative;
+    width: 100vh;
+    border: 5px solid rgb(143, 31, 31)
+    
+}
+.img-span{
+    position: relative;
+
+}
+
+
+
+
 /****************************STARS**********************************************/
 
-#stars{
+/* #stars{
     width: 1px;
     height: 1px;
     background: transparent;
@@ -640,4 +658,4 @@
     to{
         transform: translateY(-2000px)
     }
-}
+} */

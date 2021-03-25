@@ -1,6 +1,6 @@
-import sanityClient from '@sanity/folio'
+import sanityClient from '@sanity/client'
 
 export default sanityClient({
     projectId: "kirsk2g7",
-    datatest: "production"
+    dataset: "production"
 })
