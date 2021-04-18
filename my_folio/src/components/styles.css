@@ -1,11 +1,19 @@
 .App{
     text-align: center;
+  
 }
 
 
-.app-container{
-    /* display: flex;
-    justify-content: center; */
+.form-container{
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    
+    
+}
+.card-form{
+   margin: 10% auto;
+    width: 30%
 
 }
 /**************************NAVIGATION*******************************************/
