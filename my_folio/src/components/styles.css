@@ -1,12 +1,18 @@
 .App{
     text-align: center;
+  
 }
 
 
-.app-container{
-    /* display: flex;
-    justify-content: center; */
-
+.form-container{
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    
+}
+.card-form{
+    margin: 10% auto;
+    width: 30%
 }
 /**************************NAVIGATION*******************************************/
 .sidebar-left{
@@ -18,7 +24,7 @@
     height: 100vh;
     color: white;
     background-color: #5e5e70;
-    overflow-x: auto;
+    overflow-x: hidden;
     z-index: 995;
  
 }
@@ -67,19 +73,22 @@
 }
 
 /*****************************Projects**************************************/
-.project-container{
-    overflow: hidden;
-    position: relative;
-    width: 100vh;
+.project-slider{
+    /* overflow: hidden; */
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    /* width: 50%;
     border: 5px solid rgb(143, 31, 31)
-    
+     */
+}
+.card-slider{
+
 }
 .img-span{
     position: relative;
 
 }
-
-
 
 
 /****************************STARS**********************************************/

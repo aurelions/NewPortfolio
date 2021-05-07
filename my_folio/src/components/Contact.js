@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import {Form} from 'react-bootstrap';
+import {Form, Card} from 'react-bootstrap';
 
 class Contact extends React.Component{
     constructor(props){
@@ -37,7 +37,8 @@ class Contact extends React.Component{
     render(){
 
         return(
-            <div className="app-container">
+            <div className='form-container'>
+            <Card  style={{width: '30rem'}} className='card-form'>
                 <Form  onSubmit={this.handleSubmit.bind(this)} method="POST">
                     <Form.Group controlId="formName">
                         <Form.Label htmlFor='name'>Name</Form.Label>
@@ -57,8 +58,8 @@ class Contact extends React.Component{
                     </Form.Group>
                     <button type="submit" className="btn btn-primary">Submit</button>
                 </Form>
-        
-            </div>
+            </Card>
+        </div>
         )
     }
 

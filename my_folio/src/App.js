@@ -15,17 +15,15 @@ function App() {
    <div className="App">
    <BrowserRouter>
     <Navigation/>
-    
-    
-     <Stars/>
+        <Stars/>
       <Switch>
         <Route component={Home} path='/' exact={true}/>
         <Route component={About} path='/about'/>
         <Route component={Contact} path='/contact'/>
         <Route component={Projects} path='/projects'/>
       </Switch>
-  
    </BrowserRouter>
+   
    </div>
   );
 }
