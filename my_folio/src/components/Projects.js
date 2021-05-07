@@ -28,18 +28,31 @@ export  default function Projects(){
 
 
     return (
-       <div className="projects-container">
+       <div className="projects-slider">
+        <div className = "projects-slider__wrp swiper-wrapper">
+            <div className = "projects-slider__item swiper-slide">
+           <h1>Projects</h1>
         {projectData && projectData.map((post, index) => (
-            <Card className="proj-card">
-                <h1>Project</h1>
+            <Card className="card-slider">
+             
                 <Link to={"/post/" + post.slug.current} key={post.slug.current}>
                     <span className="img-span">
                         <Image src={post.mainImage.asset.url} alt={post.mainImage.alt} fluid/>
                     </span>
                 </Link>
                 
+           
+        
+            <div className="projects-slider__content">
+                <div className="projects-slider__title"></div>
+                <div className="projects-slider__text"></div>
+            </div>
+                <a href="#" className="project-slider__button"></a>
+           
             </Card>
         ))}
+         </div>
+        </div>
        </div>
         
     )

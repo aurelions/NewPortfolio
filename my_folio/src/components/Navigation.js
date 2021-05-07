@@ -14,7 +14,7 @@ export default function Navigation(){
 return(
    
     
-    <Navbar fluid className="sidebar-left" inverse>
+    <Navbar className="sidebar-left">
             <Nav id="nav" className="vertical-text-left">
                 <NavLink className="navi" to="contact">
                     Contact

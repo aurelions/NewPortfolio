@@ -1,7 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import {Form} from 'react-bootstrap';
-import Card from 'react-bootstrap/Card'
+import {Form, Card} from 'react-bootstrap';
 
 class Contact extends React.Component{
     constructor(props){
