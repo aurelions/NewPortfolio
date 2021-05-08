@@ -1,28 +1,41 @@
 import React, {useState, useEffect} from 'react';
-import sanityClient from '../client.js'
-import {Card, Image} from 'react-bootstrap'
+// import sanityClient from '../client.js'
+import firebase from '../firebase'
+import {Card, Image, Button} from 'react-bootstrap'
 import {Link} from 'react-router-dom'
 
 
 export  default function Projects(){
-    const [projectData, setProjectData] = useState(null);
+    const [projectData, setProjectData] = useState([]);
+    const [loading, setLoading] = useState(false)
 
+    const ref =  firebase.firestore().collection('projectData')
+    console.log(ref)
+
+    if(loading){
+        return <h1>Loading....</h1>
+    }
+
+    function getProjectData(){
+        setLoading(true);
+        ref.onSnapshot((querySnapshot)=>{
+            const items = [];
+            querySnapshot.forEach((doc)=>{
+                items.push(doc.data());
+            });
+            setProjectData(items)
+            setLoading(false)
+        });
+
+    };
+
+    
+
+    // eslint-disable-next-line react-hooks/rules-of-hooks
     useEffect(()=> {
-        sanityClient
-            .fetch(`*[_type == "post"]{
-                title, 
-                slug,
-                mainImage{
-                    asset->{
-                        _id,
-                        url 
-                    },
-                    alt
-                }
-            }`)
-            .then((data)=> setProjectData(data))
-            .catch(console.error);
-    }, []);
+        getProjectData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    },[]);
 
 
 
@@ -32,22 +45,18 @@ export  default function Projects(){
         <div className = "projects-slider__wrp swiper-wrapper">
             <div className = "projects-slider__item swiper-slide">
            <h1>Projects</h1>
-        {projectData && projectData.map((post, index) => (
+        {projectData.map((index) => (
             <Card className="card-slider">
              
-                <Link to={"/post/" + post.slug.current} key={post.slug.current}>
                     <span className="img-span">
-                        <Image src={post.mainImage.asset.url} alt={post.mainImage.alt} fluid/>
+                        <Image src={index.url} alt={index.alt} fluid/>
                     </span>
-                </Link>
-                
-           
         
             <div className="projects-slider__content">
-                <div className="projects-slider__title"></div>
-                <div className="projects-slider__text"></div>
+                <div className="projects-slider__title">{index.title}</div>
+                <div className="projects-slider__text">{index.description}</div>
             </div>
-                <a href="#" className="project-slider__button"></a>
+                <Button href="#" className="project-slider__button" variant="link"></Button>
            
             </Card>
         ))}
