@@ -1,5 +1,5 @@
 import React,{} from 'react';
-import './components/styles.css'
+// import './components/styles.css'
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import Contact from './components/Contact';
 import About from './components/About';
@@ -7,6 +7,8 @@ import Home from './components/Home';
 import Projects from './components/Projects'
 import Navigation from './components/Navigation';
 import Stars from './components/Stars_bg'
+import './App.scss'
+
 
 function App() {
  

@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 // import sanityClient from '../client.js'
 import firebase from '../firebase'
 import {Card, Image, Button} from 'react-bootstrap'
-import {Link} from 'react-router-dom'
+// import {Link} from 'react-router-dom'
 
 
 export  default function Projects(){
@@ -12,9 +12,7 @@ export  default function Projects(){
     const ref =  firebase.firestore().collection('projectData')
     console.log(ref)
 
-    if(loading){
-        return <h1>Loading....</h1>
-    }
+    
 
     function getProjectData(){
         setLoading(true);
@@ -37,30 +35,29 @@ export  default function Projects(){
     // eslint-disable-next-line react-hooks/exhaustive-deps
     },[]);
 
-
+if(loading){
+        return <h1>Loading....</h1>
+    }
 
 
     return (
        <div className="projects-slider">
         <div className = "projects-slider__wrp swiper-wrapper">
             <div className = "projects-slider__item swiper-slide">
-           <h1>Projects</h1>
-        {projectData.map((index) => (
-            <Card className="card-slider">
-             
-                    <span className="img-span">
-                        <Image src={index.url} alt={index.alt} fluid/>
-                    </span>
-        
-            <div className="projects-slider__content">
-                <div className="projects-slider__title">{index.title}</div>
-                <div className="projects-slider__text">{index.description}</div>
+            {loading ? <h1>Loading...</h1>: null}
+            {projectData.map((proj) => (
+                <Card className="card-slider">
+                        <span className="img-span">
+                            <Image src={proj.projectImg} alt={proj.alt} fluid/>
+                        </span>
+                        <div className="projects-slider__content">
+                            <div className="projects-slider__title">{proj.projectName}</div>
+                            <div className="projects-slider__text">{proj.description}</div>
+                        </div>
+                    <Button href={proj.projectUrl} className="project-slider__button" variant="link"></Button>
+                </Card>
+            ))}
             </div>
-                <Button href="#" className="project-slider__button" variant="link"></Button>
-           
-            </Card>
-        ))}
-         </div>
         </div>
        </div>
         

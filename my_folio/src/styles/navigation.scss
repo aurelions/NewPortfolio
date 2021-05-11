@@ -1,0 +1,33 @@
+.sidebar-left{
+    position: fixed;
+    float: left;
+    top: 0;
+    left: 0;
+    width: 175px;  
+    height: 100vh;
+    color: white;
+    background-color: #5e5e70;
+    overflow-x: hidden;
+    z-index: 995;
+ 
+}
+.vertical-text-left{
+    transform: rotate(270deg);
+    cursor: vertical-text;
+    font-size: 1em;
+    font-family: 'Menlo', monospace;
+    white-space: nowrap;
+    letter-spacing: 3px;
+    position: relative;
+    top: 30px;
+
+}
+
+.navi{
+     padding: 9px 9px 9px 9px;
+}
+
+
+.icons{
+    display: inline-flex;
+}

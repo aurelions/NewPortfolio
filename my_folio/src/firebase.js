@@ -3,6 +3,7 @@ import "firebase/firestore"
 
 
 
+
 const firebaseConfig = {
   apiKey: "AIzaSyBcqAVOvDAOpmEmvLj5PF0Ueai9vPfRADI",
   authDomain: "myprojects-64d83.firebaseapp.com",
@@ -12,6 +13,8 @@ const firebaseConfig = {
   appId: "1:235265153548:web:ea5edb1912add3f861ac29"
 };
 
-firebase.initializeApp(firebaseConfig)
+ firebase.initializeApp(firebaseConfig);
+ firebase.firestore()
+
 
 export default firebase
