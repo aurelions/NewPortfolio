@@ -1,6 +1,8 @@
 import React from 'react';
 import axios from 'axios';
 import {Form, Card} from 'react-bootstrap';
+import '../styles/contact.scss'
+
 
 class Contact extends React.Component{
     constructor(props){
