@@ -1,59 +1,60 @@
-import React, {useState, useEffect} from 'react';
-import sanityClient from '../client.js'
-import {Card, Image} from 'react-bootstrap'
-import {Link} from 'react-router-dom'
+import React, { useState, useEffect } from "react";
+// import sanityClient from '../client.js'
+import firebase from "../firebase";
+import { Card, Image, Button } from "react-bootstrap";
+// import {Link} from 'react-router-dom'
 
+export default function Projects() {
+  const [projectData, setProjectData] = useState([]);
+  const [loading, setLoading] = useState(false);
 
-export  default function Projects(){
-    const [projectData, setProjectData] = useState(null);
+  const getProjectData = async () => {
+    setLoading(true);
+    let projects = await firebase.firestore().collection("projects").get();
+    projects = projects.docs.map((project) => project.data());
+    setProjectData(projects);
+    setLoading(false);
+  };
 
-    useEffect(()=> {
-        sanityClient
-            .fetch(`*[_type == "post"]{
-                title, 
-                slug,
-                mainImage{
-                    asset->{
-                        _id,
-                        url 
-                    },
-                    alt
-                }
-            }`)
-            .then((data)=> setProjectData(data))
-            .catch(console.error);
-    }, []);
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  useEffect(() => {
+    getProjectData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
+  if (loading) {
+    return <h1>Loading....</h1>;
+  }
 
-
-
-    return (
-       <div className="projects-slider">
-        <div className = "projects-slider__wrp swiper-wrapper">
-            <div className = "projects-slider__item swiper-slide">
-           <h1>Projects</h1>
-        {projectData && projectData.map((post, index) => (
-            <Card className="card-slider">
-             
-                <Link to={"/post/" + post.slug.current} key={post.slug.current}>
-                    <span className="img-span">
-                        <Image src={post.mainImage.asset.url} alt={post.mainImage.alt} fluid/>
-                    </span>
-                </Link>
-                
-           
-        
-            <div className="projects-slider__content">
-                <div className="projects-slider__title"></div>
-                <div className="projects-slider__text"></div>
-            </div>
-                <a href="#" className="project-slider__button"></a>
-           
+  return (
+    <div className="projects-slider">
+      <div className="projects-slider__wrp swiper-wrapper">
+        <div className="projects-slider__item swiper-slide">
+          {loading ? <h1>Loading...</h1> : null}
+          {projectData.map((proj, i) => (
+            <Card key={i} className="card-slider">
+              <span className="img-span">
+                <Image
+                  src={require(`../images/${proj.projectImg}`).default}
+                  alt={proj.alt}
+                  fluid
+                />
+              </span>
+              <div className="projects-slider__content">
+                <div className="projects-slider__title">{proj.projectName}</div>
+                <div className="projects-slider__text">{proj.description}</div>
+              </div>
+              <a
+                href={proj.projectUrl}
+                className="project-slider__button"
+                target="_blank"
+              >
+                Open Link
+              </a>
             </Card>
-        ))}
-         </div>
+          ))}
         </div>
-       </div>
-        
-    )
+      </div>
+    </div>
+  );
 }
