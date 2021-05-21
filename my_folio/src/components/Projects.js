@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 // import sanityClient from '../client.js'
 import firebase from "../firebase";
 import { Card, Image, Button, ButtonGroup } from "react-bootstrap";
+import '../styles/projects.scss'
 // import {Link} from 'react-router-dom'
 
 export default function Projects() {
