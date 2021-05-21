@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 // import sanityClient from '../client.js'
 import firebase from "../firebase";
-import { Card, Image, Button } from "react-bootstrap";
+import { Card, Image, Button, ButtonGroup } from "react-bootstrap";
 // import {Link} from 'react-router-dom'
 
 export default function Projects() {
@@ -26,6 +26,8 @@ export default function Projects() {
     return <h1>Loading....</h1>;
   }
 
+  console.log("projectData==>>", projectData);
+
   return (
     <div className="projects-slider">
       <div className="projects-slider__wrp swiper-wrapper">
@@ -33,17 +35,18 @@ export default function Projects() {
           {loading ? <h1>Loading...</h1> : null}
           {projectData.map((proj, i) => (
             <Card key={i} className="card-slider">
-              <span className="img-span">
+              {proj.projectImg && <span className="img-span">
                 <Image
                   src={require(`../images/${proj.projectImg}`).default}
                   alt={proj.alt}
                   fluid
                 />
-              </span>
+              </span>}
               <div className="projects-slider__content">
                 <div className="projects-slider__title">{proj.projectName}</div>
                 <div className="projects-slider__text">{proj.description}</div>
               </div>
+        
               <a
                 href={proj.projectUrl}
                 className="project-slider__button"
@@ -51,6 +54,8 @@ export default function Projects() {
               >
                 Open Link
               </a>
+              
+              
             </Card>
           ))}
         </div>
