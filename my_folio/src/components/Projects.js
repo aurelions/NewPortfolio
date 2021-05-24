@@ -66,19 +66,21 @@ export default function Projects() {
       }}
      
     >
+      <div className="projects-slider swiper-container-fade swiper-container-horizontal">
       <div className="projects-slider__wrp swiper-wrapper">
-        <div className="projects-slider__item swiper-slide">
+        <div className="projects-slider__item swiper-slide swiper-slide-duplicate swiper-slide-duplicate-active">
           {loading ? <h1>Loading...</h1> : null}
           {projectData.map((proj, i) => (
             <SwiperSlide>
               <Card key={i} className="">
                 {proj.projectImg && (
-                  <span className="img-span">
+                  <span className="projects-slider__img">
                     <Image
                       src={require(`../images/${proj.projectImg}`).default}
                       alt={proj.alt}
                       fluid
                     />
+                    
                   </span>
                 )}
                 <div className="projects-slider__content">
@@ -101,6 +103,7 @@ export default function Projects() {
             </SwiperSlide>
           ))}
         </div>
+      </div>
       </div>
     </Swiper>
   );
